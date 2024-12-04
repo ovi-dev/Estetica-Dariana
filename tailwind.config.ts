@@ -11,7 +11,28 @@ export default {
       colors: {
         background: "var(--background)",
         foreground: "var(--foreground)",
-      },
+        fondo2: "#FBF6FB",
+        fondonav:"#FFE7E7",
+        hovernav:"#0BDDEC",
+        hover:"#0BDDEC",
+ },
+      // screens: {
+      //   // Personaliza o agrega nuevos breakpoints
+      //   xs: '480px', // breakpoint pequeño
+      //   sm: '640px', // Móviles grandes
+      //   md: '768px', // Tablets
+      //   lg: '1024px', // Laptops
+      //   xl: '1280px', // Monitores grandes
+      //   '2xl': '1536px', // Monitores extra grandes
+      // },
+
+
+    },
+    backgroundImage: {
+      site: "url('/fondo.png')"
+      // about: "url('./assets/about.png')",
+      // services: "url('/img/services.png')",
+    
     },
   },
   plugins: [],
