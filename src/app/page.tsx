@@ -1,5 +1,4 @@
-import Portada from "@/components/Portada";
-import Footer from "@/components/ui/footer/Footer";
+
 import Image from 'next/image';
 
 

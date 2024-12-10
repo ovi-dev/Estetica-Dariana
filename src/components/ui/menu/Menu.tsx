@@ -7,7 +7,7 @@ import ActiveLink from '../active-link/ActiveLink';
 
 
 
-const menu = () => {
+const Menu = () => {
 
   
 
@@ -109,6 +109,6 @@ const menu = () => {
   );
 };
 
-export default menu
+export default Menu
 
 
