@@ -3,6 +3,7 @@ import localFont from "next/font/local";
 import "./globals.css";
 import { inter, roboto } from "@/fonts/fonts";
 import Menu from "@/components/ui/menu/Menu";
+import Footer from "@/components/ui/footer/Footer";
 
 // const geistSans = localFont({
 //   src: "./fonts/GeistVF.woff",
@@ -28,10 +29,11 @@ export default function RootLayout({
   return (
     <html lang="es">
       <body
-        className={`${roboto.className} ${inter.className} bg-fondo2 bg-no-repeat bg-cover overflow-hidden`}
+        className={`${roboto.className} ${inter.className} bg-fondo2 bg-no-repeat bg-cover overflow-auto`}
       >
         <Menu/>
         {children}
+        <Footer/>
       </body>
     </html>
   );

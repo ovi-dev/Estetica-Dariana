@@ -1,4 +1,7 @@
 import Portada from "@/components/Portada";
+import Footer from "@/components/ui/footer/Footer";
+import Image from 'next/image';
+
 
 
 
@@ -7,7 +10,30 @@ import Portada from "@/components/Portada";
 export default function Home() {
   return (
 
-    <h1>Hola </h1>
+   <>
+   <div>
+
+      {/* contenido */}
+    <div> 
+      <p>contenido</p>
+    </div>
+
+
+    {/* Imagen */}
+    <div>
+
+    <Image
+      src='/fotospng/dariana.jpg'
+      width={500}
+      height={500}
+      alt="Dariana Ortiz"
+    />
+    </div>
+
+
+   </div>
+   
+   </>
 
 
   //  redirect('principa/home')

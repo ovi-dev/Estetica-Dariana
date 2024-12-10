@@ -27,17 +27,17 @@ const menu = () => {
 
 
   return (
-    <header className=' container mx-auto px-4'>
+    <header className='sticky top-0 mx-auto px-4  bg-fondo2 '>
 
 
 
-      <nav className=" flex ">
-        <div className="container mx-auto flex items-center justify-between p-4">
+      <nav className=" flex  ">
+        <div className="container mx-auto flex items-center justify-between p-1">
           {/* Logo */}
           <div className="flex items-center">
             <Link href={'/'}>
               <Image
-                src="/fotospng/logo.png" // Cambia esta ruta por la de tu logo
+                src="/fotospng/logo.png" // ruta  logo
                 alt="Logo"
                 width={140}
                 height={90}
