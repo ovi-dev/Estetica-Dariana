@@ -12,7 +12,7 @@ const Menu = () => {
   
 
   const pathName = [
-    {href: '/', label: 'Home'},
+    {href: '/', label: 'Inicio'},
     {href: '/about', label: 'Dariana Ortiz'},
     {href: '/tratamientos', label: 'Tratamientos'},
     {href: '/contacto', label: 'Contacto'},

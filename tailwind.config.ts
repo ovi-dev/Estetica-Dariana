@@ -11,7 +11,7 @@ export default {
       colors: {
         background: "var(--background)",
         foreground: "var(--foreground)",
-        fondo2: "#FBF6FB",
+        fondo2: "#f3fbfb",
         fondonav:"#FFE7E7",
         hovernav:"#0BDDEC",
         hover:"#0BDDEC",
