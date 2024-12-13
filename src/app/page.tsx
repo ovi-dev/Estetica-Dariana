@@ -1,9 +1,10 @@
 import Image from 'next/image';
 
+
 export default function Home() {
   return (
     <>
-    <section className=' container mx-auto'>
+    <section className=' container mx-auto space-x-0'>
 
     
       <div className="flex flex-wrap items-center justify-between p-[10px]">
@@ -22,13 +23,13 @@ export default function Home() {
         </div>
 
         {/* Imagen alineada a la derecha */}
-        <div className="w-full md:w-1/2 flex justify-center md:justify-end mt-3 md:mt-2">
+        <div className="w-full md:w-1/2 flex justify-center md:justify-center mt-3 md:mt-2">
           <Image
             src="/fotospng/dariana.jpg"
             width={350}
             height={200}
             alt="Dariana Ortiz"
-            className="rounded-full"
+            className="rounded-[90px] shadow-2xl "
           />
         </div>
       </div>
