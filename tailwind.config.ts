@@ -15,6 +15,7 @@ export default {
         fondonav:"#FFE7E7",
         hovernav:"#0BDDEC",
         hover:"#0BDDEC",
+        
  },
       // screens: {
       //   // Personaliza o agrega nuevos breakpoints

@@ -35,8 +35,37 @@ export default function Home() {
       </div>
       </section>
 
-      <section>
-        <h1> mas todavia </h1>
+      <section className='container mx-auto space-x-0'>
+
+        <h1 className=' font-bold text-center mt-20 mb-7 text-4xl'> Nuestro Trabajo </h1>
+        <div className="grid grid-cols-2 gap-3">
+        <div>
+            <Image 
+            width={550}
+            height={400}
+            className="h-auto max-w-full rounded-lg" src="/fotospng/DAV_8805-Editar.png" alt="uno"/>
+        </div>
+        <div>
+            <Image 
+             width={550}
+             height={200}
+            className="h-auto max-w-full rounded-lg" src="/fotospng/DAV_8805-Editar.png" alt=""/>
+        </div>
+        <div>
+            <Image 
+             width={550}
+             height={200}
+            className="h-auto max-w-full rounded-lg" src="/fotospng/DAV_8805-Editar.png" alt=""/>
+        </div>
+        <div>
+            <Image 
+             width={550}
+             height={200}
+            className="h-auto max-w-full rounded-lg" src="/fotospng/DAV_8805-Editar.png" alt=""/>
+        </div>
+    </div>
+
+
       </section>
     </>
   );
