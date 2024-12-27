@@ -1,15 +1,27 @@
+'use client'
+
 import Image from 'next/image';
+
+import { motion } from "motion/react"
+import { fadeIn2 } from '@/variantes/var';
+
 
 
 export default function Home() {
+  
   return (
     <>
     <section className=' container mx-auto space-x-0'>
 
     
-      <div className="flex flex-wrap items-center justify-between p-[10px]">
+      <div className="flex flex-wrap items-center justify-between p-[10px] ">
         {/* Texto alineado a la izquierda */}
-        <div className="w-full md:w-1/2">
+        <motion.div 
+        variants={fadeIn2('left', 1.4)}
+        initial='hidden'
+        whileInView={'show'}
+        viewport={{once: false, amount: 0.3}}
+        className="w-full md:w-1/2">
           <h1 className="text-2xl font-bold mb-4 text-center">Dariana Ortiz</h1>
           <p className="text-lg leading-relaxed">
             Siempre he tenido la determinación de luchar por lo que me apasiona,
@@ -20,10 +32,16 @@ export default function Home() {
             lo que más me llena de satisfacción es ver en la cara de mis pacientes la felicidad de verse y sentirse mejor,
             mi enfoque se basa en resultados naturales que potencian y realzan la belleza.
           </p>
-        </div>
+        </motion.div>
 
         {/* Imagen alineada a la derecha */}
-        <div className="w-full md:w-1/2 flex justify-center md:justify-center mt-3 md:mt-2">
+        <motion.div 
+         variants={fadeIn2('right', 0.5)}
+         initial='hidden'
+         whileInView={'show'}
+         viewport={{once: false, amount: 0.3}}
+        
+        className="w-full md:w-1/2 flex justify-center md:justify-center mt-3 md:mt-2">
           <Image
             src="/fotospng/dariana.jpg"
             width={350}
@@ -31,7 +49,7 @@ export default function Home() {
             alt="Dariana Ortiz"
             className="rounded-[90px] shadow-2xl "
           />
-        </div>
+        </motion.div>
       </div>
       </section>
 

@@ -11,10 +11,13 @@
   "dependencies": {
     "@emotion/react": "^11.14.0",
     "@emotion/styled": "^11.14.0",
+    "@material-tailwind/react": "^2.1.10",
     "@mui/icons-material": "^6.2.0",
     "@mui/material": "^6.2.0",
     "clsx": "^2.1.1",
+    "motion": "^11.15.0",
     "next": "15.0.3",
+    "next-auth": "^5.0.0-beta.25",
     "primeflex": "^3.3.1",
     "primereact": "^10.8.5",
     "react": "^18.0.0",
