@@ -1,78 +1,123 @@
-
-import React from 'react'
+'use client'
+import emailjs from '@emailjs/browser';
 import Image from 'next/image';
+import { motion } from 'motion/react';
+import { useRef } from 'react';
 
-
-
-const Contacto = () => {
-  return (
-    <section className='py-7'>
-      {/* envuelve todo */}
-      <div className='container mx-auto '>
-        <div className=' flex flex-col lg:flex-row gap-2'>
-          {/* lado izquierdo */}
-
-          <div className='flex flex-col gap-5 justify-start items-center'>
-            <p className=' text-xl  font-medium mb-2 tracking-wide'>Dariana Ortiz</p>
-            <Image
-              className='rounded-[10px]'
-              src="/fotospng/DAV_8898-Editar.png" alt="Dariana Ortiz"
-              width={400} height={400} />
-
-            <h5>Telefono </h5>
-
-          </div>
-
-
-          {/* lado derecho */}
-          <div className=' mx-auto'>
-            <h2 className=' mb-8 text-center  text-xl  font-medium tracking-wide'>CONTACTO</h2>
-            <form className='bg-white shadow-md rounded-lg py-10 px-6 mb-10'>
-              <div className=' mb-5'>
-                <label className="text-sm font-medium">Nombre</label>
-                <input
-                  className="w-full p-3  border border-gray-600"
-                  type="text"
-                  placeholder="Nombre"
-                />
-              </div>
-              <div className=' mb-5'>
-                <label>Correo</label>
-                <input type="email"
-                  className="w-full p-3  border border-gray-600"
-                  placeholder="Email"
-                />
-              </div>
-              <div className=' mb-5'>
-                <label className=' text-sm font-medium'>Mensaje</label>
-                <textarea className="w-full p-3  border border-gray-600"></textarea>
-              </div>
-              <div className=' mb-5'>
-                <label>Telefono</label>
-                <input type="tel"
-                  className="w-full p-3  border border-gray-600"
-                  placeholder="Telefono"
-                />
-              </div>
-                <div className=' mb-5'>
-                  <input type="checkbox" />
-                  <label> <span>  Acepto ley de proteccion de datos</span></label>
-                </div>
-                <button className=" uppercase  text-sm bg-hovernav m-2 p-2 text-lg rounded-md transition-all hover:bg-green-400">Enviar</button>
-              </form>
-          </div>
-
-
-        </div>
-      </div>
-
-
-
-
-
-    </section>
-  )
+interface EmailFormElements extends HTMLFormControlsCollection {
+  name: HTMLInputElement;
+  email: HTMLInputElement;
+  message: HTMLTextAreaElement;
+  phone: HTMLInputElement;
 }
 
-export default Contacto
+interface EmailForm extends HTMLFormElement {
+  readonly elements: EmailFormElements;
+}
 
+const Contacto = () => {
+  const form = useRef<HTMLFormElement>(null);
+
+  const sendEmail = (e: React.FormEvent<EmailForm>) => {
+    e.preventDefault();
+
+    emailjs.sendForm('service_72pp6wb', 'template_0qb52ij', form.current as unknown as HTMLFormElement, {
+        publicKey: '-AY7GDC4SkSSFlu8R',
+      })
+    
+      .then(
+        () => {
+          console.log('SUCCESS!');
+        },
+        (error) => {
+          console.log('FAILED...', error.text);
+        },
+      );
+      alert('Mensaje enviado')
+      e.currentTarget.reset()
+  };
+
+  return (
+    <section className="flex justify-center items-center min-h-screen -mt-[90px]">
+      <div className="container mx-auto flex flex-col md:flex-row items-center justify-center gap-20">
+        {/* Imagen y detalles */}
+        <div className="flex flex-col items-center gap-5">
+          <p className="text-xl font-medium tracking-wide">Dariana Ortiz</p>
+          <Image
+            className="rounded-[10px]"
+            src="/fotospng/DAV_8898-Editar.png"
+            alt="Dariana Ortiz"
+            width={350}
+            height={400}
+          />
+          <h5>Teléfono</h5>
+        </div>
+        {/* Formulario */}
+        <div className="w-full max-w-md">
+          {/* <h2 className="mb-8 text-center text-xl font-medium tracking-wide">
+            CONTACTO
+          </h2> */}
+          <motion.form
+            onSubmit={sendEmail}
+            ref={form}
+            viewport={{ once: false, amount: 0.3 }}
+            className="bg-white shadow-md rounded-lg py-10 px-6 mb-6 flex flex-col items-center"
+          >
+            <div className="mb-5 w-full">
+              <label className="text-sm font-medium">Nombre</label>
+              <input
+                name="name"
+                required
+                className="w-full p-3 border border-gray-600"
+                type="text"
+                placeholder="Nombre"
+              />
+            </div>
+            <div className="mb-5 w-full">
+              <label>Correo</label>
+              <input
+                name="email"
+                type="email"
+                required
+                className="w-full p-3 border border-gray-600"
+                placeholder="Email"
+              />
+            </div>
+            <div className="mb-5 w-full">
+              <label className="text-sm font-medium">Mensaje</label>
+              <textarea
+                name="message"
+                required
+                className="w-full p-3 border border-gray-600"
+              ></textarea>
+            </div>
+            <div className="mb-5 w-full">
+              <label>Teléfono</label>
+              <input
+                name="phone"
+                type="tel"
+                required
+                className="w-full p-3 border border-gray-600"
+                placeholder="Teléfono"
+              />
+            </div>
+            <div className="mb-5 w-full flex items-center gap-2">
+              <input type="checkbox" />
+              <label>
+                <span>Acepto ley de protección de datos</span>
+              </label>
+            </div>
+            <button
+              type="submit"
+              className="uppercase text-sm bg-hovernav m-2 p-2 rounded-md transition-all hover:bg-green-400"
+            >
+              Enviar
+            </button>
+          </motion.form>
+        </div>
+      </div>
+    </section>
+  )
+};
+
+export default Contacto;
