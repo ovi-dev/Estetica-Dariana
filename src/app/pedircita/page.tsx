@@ -2,8 +2,9 @@ import React from 'react'
 
 const Pedircita = () => {
   return (
-    <div>
-      <h1>Pedir Cita</h1>
+    <div className='flex justify-center items-center min-h-screen'>
+
+      <h1 className=' text-[40px]'>Proximamente</h1>
     </div>
   )
 }

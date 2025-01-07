@@ -48,7 +48,7 @@ const Menu = () => {
   }, [submenuOpen]);
 
   return (
-    <header className="sticky top-0 mx-auto px-4 bg-fondo2">
+    <header className="sticky top-0 mx-auto px-4 bg-slate-200 h-[110px]">
       <nav className="flex">
         <div className="container mx-auto flex items-center justify-between p-1">
           {/* Logo */}
@@ -76,7 +76,7 @@ const Menu = () => {
                     {navItem.label}
                   </button>
                   {submenuOpen && (
-                    <div className="absolute top-full bg-white border border-gray-200 rounded-md shadow-lg">
+                    <div className="absolute top-full bg-slate-100 border border-gray-200 rounded-md shadow-lg">
                       <ul>
                         {navItem.submenu?.map((subItem) => (
                           <li

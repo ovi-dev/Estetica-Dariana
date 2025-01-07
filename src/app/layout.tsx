@@ -31,7 +31,7 @@ export default function RootLayout({
   return (
     <html lang="es">
       <body
-        className={`${roboto.className} ${inter.className} bg-fondo2 bg-no-repeat bg-cover overflow-auto`}
+        className={`${roboto.className} ${inter.className} bg-slate-200 bg-no-repeat bg-cover overflow-auto`}
       >
        
         <Menu/>
