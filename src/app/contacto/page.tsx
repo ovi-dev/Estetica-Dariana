@@ -5,7 +5,6 @@ import { motion } from 'motion/react';
 import { useRef } from 'react';
 import { FaWhatsapp } from "react-icons/fa";
 
-import WhatsAppIcon from '@mui/icons-material/WhatsApp';
 import Link from 'next/link';
 
 interface EmailFormElements extends HTMLFormControlsCollection {

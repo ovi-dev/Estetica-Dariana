@@ -3,7 +3,7 @@ import Backdrop from '@mui/material/Backdrop';
 import Box from '@mui/material/Box';
 import Modal from '@mui/material/Modal';
 import Fade from '@mui/material/Fade';
-import Button from '@mui/material/Button';
+
 import Typography from '@mui/material/Typography';
 
 interface ModalProps {
@@ -25,7 +25,7 @@ const style = {
 
 export default function TransitionsModal({ children, ...props }: ModalProps) {
   const [open, setOpen] = React.useState(false);
-  const handleOpen = () => setOpen(true);
+
   const handleClose = () => setOpen(false);
 
   return (
