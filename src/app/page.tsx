@@ -57,7 +57,9 @@ export default function Home() {
 
         <h1 className=' font-bold text-center mt-20 mb-7 text-4xl'> Nuestro Trabajo </h1>
         <div className="grid grid-cols-2 gap-3">
-        <div>
+
+          
+        <div className=''>
             <Image 
             width={550}
             height={400}

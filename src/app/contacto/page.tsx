@@ -6,6 +6,7 @@ import { useRef } from 'react';
 import { FaWhatsapp } from "react-icons/fa";
 
 import Link from 'next/link';
+import { toast } from 'react-toastify';
 
 interface EmailFormElements extends HTMLFormControlsCollection {
   name: HTMLInputElement;
@@ -36,7 +37,8 @@ const Contacto = () => {
           console.log('FAILED...', error.text);
         },
       );
-      alert('Mensaje enviado')
+      toast.success('Paciente Registrado Correctamente')
+      // alert('Mensaje enviado')
       e.currentTarget.reset()
   };
 

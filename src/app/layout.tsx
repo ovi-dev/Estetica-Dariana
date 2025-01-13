@@ -4,6 +4,7 @@ import "./globals.css";
 import { inter, roboto } from "@/fonts/fonts";
 import Menu from "@/components/ui/menu/Menu";
 import Footer from "@/components/ui/footer/Footer";
+import { ToastContainer, toast } from 'react-toastify';
 
 
 
@@ -37,6 +38,8 @@ export default function RootLayout({
         <Menu/>
         {children}
         <Footer/>
+        <ToastContainer />
+
       </body>
     </html>
   );
